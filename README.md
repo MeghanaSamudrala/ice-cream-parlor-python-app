@@ -1,6 +1,7 @@
 # ice-cream-parlor-python-app
 Python Application for a fictional ice cream parlor cafe that uses
 SQLite to manage,
+<br>
 ● Seasonal flavor offerings
 <br>
 ● Ingredient inventory
