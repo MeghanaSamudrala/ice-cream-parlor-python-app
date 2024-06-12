@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Flavors</title>
+</head>
+<body>
+    <h1>Search Flavors</h1>
+    <nav>
+        <a href="/">Home</a>
+    </nav>
+    <form action="/search" method="get">
+        <input type="text" name="keyword" value="{{ keyword }}" placeholder="Search for flavors...">
+        <button type="submit">Search</button>
+    </form>
+    <div id="search-results">
+        {% for flavor in results %}
+            <div>
+                <span>{{ flavor[1] }} - Ingredients: {{ flavor[2] }}</span>
+                <form action="/add_to_cart" method="post">
+                    <input type="hidden" name="flavor_id" value="{{ flavor[0] }}">
+                    <input type="number" name="quantity" value="1" min="1">
+                    <button type="submit">Add to Cart</button>
+                </form>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
